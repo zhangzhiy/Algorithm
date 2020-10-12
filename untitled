@@ -1,0 +1,27 @@
+
+1.推送
+	阿里推送，融云推送，系统推送的集成
+2.账号
+3.数据库
+	客户端 Realm ，powerAPP objectbox
+4.微聊
+5.腾讯云 音视频  VR带看
+6.代码中三方库使用的注意事项梳理
+7.地图
+	百度地图 高德地图
+8.项目中封装的通用工具类说明
+9.销控，客源的代码
+10.项目中封装的通用UI工具类（UIlib包下）
+
+11.一些配置文件的用途：
+assets\personalizeMap
+app\and-res-guard.gradle
+PowerApp\freeline.py
+
+12.一些库的用途
+SaaS_AppAnalytics_Android_SDK_V4.0.13.jar
+gradle导入的库，比较特殊的一些相关的版本依赖关系，比如retrofit,okhttp,jackson等相关
+
+
+
+负责产品的Android客户端的开发和维护，并保证可扩展性和可维护性，对项目进行稳定性优化和性能调优。
