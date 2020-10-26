@@ -33,9 +33,62 @@
 // 👍 406 👎 0
 
 
+import java.util.Arrays;
+import java.util.HashMap;
+//02
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums1.length; i++) {
+            int count=map.getOrDefault(nums1[i], 0)+1;
+            map.put(nums1[i], count);
+        }
+        int index = 0;
+
+        for (int i = 0; i < nums2.length; i++) {
+            if (map.getOrDefault(nums2[i],0)>0) {
+                nums1[index++] = nums2[i];
+                int count=map.get(nums2[i])-1;
+                if (count>0) {
+                    map.put(nums2[i],count);
+                } else {
+                    map.remove(nums2[i]);
+                }
+            }
+        }
+        int[] result = new int[index];
+        for (int i = 0; i < index; i++) {
+            result[i] = nums1[i];
+        }
+        return result;
+
+
+
+//        if (nums1.length > nums2.length) {
+//            intersect(nums2, nums1);
+//        }
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        for (int i = 0; i < nums1.length; i++) {
+//            int count=map.getOrDefault(nums1[i], 0)+1;
+//            map.put(nums1[i], count);
+//        }
+//        int index = 0;
+//        int[] result = new int[nums1.length];
+//        for (int i = 0; i < nums2.length; i++) {
+//            if (map.getOrDefault(nums2[i],0)>0) {
+//                result[index++] = nums2[i];
+//                int count=map.get(nums2[i])-1;
+//                if (count>0) {
+//                    map.put(nums2[i],count);
+//                } else {
+//                    map.remove(nums2[i]);
+//                }
+//            }
+//        }
+//
+//        return Arrays.copyOfRange(result,0,index);
 
     }
 }
