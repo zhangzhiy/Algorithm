@@ -19,22 +19,37 @@ import android.util.Log;
 
 import java.util.Arrays;
 import java.util.HashMap;
-
+//3
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        //01
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer,Integer> map=new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(target - nums[i])) {
-                return new int[]{
-                        map.get(target - nums[i]), i
-                };
-            } else {
-                map.put(nums[i], i);
+            if(map.containsKey(target-nums[i])){
+                return new int[]{map.get(target-nums[i]),i};
+            }else {
+                map.put(nums[i],i);
             }
         }
         return new int[0];
+
+
+
+
+
+
+        //01
+//        HashMap<Integer, Integer> map = new HashMap<>();
+//        for (int i = 0; i < nums.length; i++) {
+//            if (map.containsKey(target - nums[i])) {
+//                return new int[]{
+//                        map.get(target - nums[i]), i
+//                };
+//            } else {
+//                map.put(nums[i], i);
+//            }
+//        }
+//        return new int[0];
         //02
 //        int[] tempNums = new int[nums.length];
 //        for (int i = 0; i < nums.length; i++) {

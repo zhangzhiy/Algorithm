@@ -24,11 +24,22 @@
 // Related Topics 动态规划 
 // 👍 1303 👎 0
 
-
+//2
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int climbStairs(int n) {
-
+        if(n<=2){
+            return n;
+        }
+        int result=0;
+        int i=1;
+        int j=2;
+        for (int k = 3; k <= n; k++) {
+            result=i+j;
+            i=j;
+            j=result;
+        }
+        return result;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

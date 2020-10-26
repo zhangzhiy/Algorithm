@@ -40,24 +40,44 @@
 // Related Topics 栈 字符串 
 // 👍 1938 👎 0
 
-
+//2
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<Character>();
-
+        Stack<Character> stack=new Stack<Character>();
         for (char c : s.toCharArray()) {
-            if (c == '(') {
+            if(c == '('){
                 stack.push(')');
-            } else if (c == '[') {
+            }else if (c =='['){
                 stack.push(']');
-            } else if (c == '{') {
+            }else if(c == '{'){
                 stack.push('}');
-            } else if (stack.isEmpty() || stack.pop() != c) {
+            }else if(stack.isEmpty()||stack.pop()!=c){
                 return false;
             }
         }
         return stack.isEmpty();
+
+
+
+
+
+
+
+//        Stack<Character> stack = new Stack<Character>();
+//
+//        for (char c : s.toCharArray()) {
+//            if (c == '(') {
+//                stack.push(')');
+//            } else if (c == '[') {
+//                stack.push(']');
+//            } else if (c == '{') {
+//                stack.push('}');
+//            } else if (stack.isEmpty() || stack.pop() != c) {
+//                return false;
+//            }
+//        }
+//        return stack.isEmpty();
 
 
     }

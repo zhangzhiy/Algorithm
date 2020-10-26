@@ -20,7 +20,7 @@
 // Related Topics 数组 
 // 👍 565 👎 0
 
-
+//3
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int[] plusOne(int[] digits) {
@@ -28,23 +28,44 @@ class Solution {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] == 9 && isAdd == 1) {
                 digits[i] = 0;
-                isAdd = 1;
+                isAdd++;
             } else if (isAdd == 1) {
-                digits[i]++;
-                isAdd = 0;
+                digits[i] += 1;
+                isAdd--;
             }
         }
         int[] result;
-        if(isAdd==1){
-            result=new int[digits.length+1];
-            result[0]=1;
-            for (int i = 0; i < digits.length; i++) {
-                result[i+1]=digits[i];
+        if (isAdd == 1) {
+            result = new int[digits.length + 1];
+            result[0] = 1;
+            for (int i = 1; i < digits.length; i++) {
+                result[i] = digits[i - 1];
             }
-        }else {
-            result=digits;
+        } else {
+            result = digits;
         }
         return result;
+//        int isAdd = 1;
+//        for (int i = digits.length - 1; i >= 0; i--) {
+//            if (digits[i] == 9 && isAdd == 1) {
+//                digits[i] = 0;
+//                isAdd = 1;
+//            } else if (isAdd == 1) {
+//                digits[i]++;
+//                isAdd = 0;
+//            }
+//        }
+//        int[] result;
+//        if(isAdd==1){
+//            result=new int[digits.length+1];
+//            result[0]=1;
+//            for (int i = 0; i < digits.length; i++) {
+//                result[i+1]=digits[i];
+//            }
+//        }else {
+//            result=digits;
+//        }
+//        return result;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

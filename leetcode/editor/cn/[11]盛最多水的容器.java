@@ -18,11 +18,39 @@
 // Related Topics 数组 双指针 
 // 👍 1944 👎 0
 
-
+//2
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int maxArea(int[] height) {
 
+        int max=0;
+        int start=0;
+        int end = height.length-1;
+        while (start<end){
+            if(height[start]<height[end]){
+                max=Math.max((end-start)*height[start],max);
+                start++;
+            }else {
+                max=Math.max((end-start)*height[end],max);
+                end--;
+            }
+
+        }
+        return max;
+
+//        int max=0;
+//        int start=0;
+//        int end = height.length-1;
+//        while (start<end){
+//            int tempArea=(end-start)*Math.min(height[start],height[end]);
+//            max=Math.max(tempArea,max);
+//            if(height[start]<height[end]){
+//                start++;
+//            }else {
+//                end--;
+//            }
+//        }
+//        return max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
