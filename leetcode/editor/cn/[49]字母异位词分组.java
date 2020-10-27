@@ -20,11 +20,24 @@
 // 👍 502 👎 0
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+//1
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
+        HashMap<String,List<String>> map =new HashMap<String, List<String>>();
+        for (String str :strs) {
+            char[] arrays=str.toCharArray();
+            Arrays.sort(arrays);
+            String key=String.valueOf(arrays);
+            List<String> value=map.getOrDefault(key,new ArrayList<String>());
+            value.add(str);
+            map.put(key,value);
+        }
 
-
+        return new ArrayList(map.values());
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
