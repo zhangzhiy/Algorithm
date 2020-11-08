@@ -27,17 +27,45 @@ import java.util.HashMap;
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String,List<String>> map =new HashMap<String, List<String>>();
-        for (String str :strs) {
-            char[] arrays=str.toCharArray();
-            Arrays.sort(arrays);
-            String key=String.valueOf(arrays);
-            List<String> value=map.getOrDefault(key,new ArrayList<String>());
-            value.add(str);
+        HashMap<String,List<String>> map=new HashMap<String, List<String>>();
+        for (int i = 0; i < strs.length; i++) {
+            char[] array=strs[i].toCharArray();
+            Arrays.sort(array);
+           String key= String.valueOf(array);
+           List<String> value =map.getOrDefault(key,new ArrayList<String>());
+           value.add(strs[i]);
             map.put(key,value);
         }
-
         return new ArrayList(map.values());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        HashMap<String,List<String>> map =new HashMap<String, List<String>>();
+//        for (String str :strs) {
+//            char[] arrays=str.toCharArray();
+//            Arrays.sort(arrays);
+//            String key=String.valueOf(arrays);
+//            List<String> value=map.getOrDefault(key,new ArrayList<String>());
+//            value.add(str);
+//            map.put(key,value);
+//        }
+//
+//        return new ArrayList(map.values());
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

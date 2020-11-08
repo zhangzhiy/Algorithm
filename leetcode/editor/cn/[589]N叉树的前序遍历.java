@@ -41,10 +41,38 @@ import java.util.List;
 
 class Solution {
     public List<Integer> preorder(Node root) {
-        List<Integer> list =new ArrayList<>();
-        traversal(root,list);
+        List<Integer> list = new ArrayList<>();
+        order(root,list);
+
         return list;
+
+
+//        List<Integer> list =new ArrayList<>();
+//        traversal(root,list);
+//        return list;
     }
+    private void order(Node root,List<Integer> list){
+        if(root!=null){
+            list.add(root.val);
+            if(root.children!=null){
+                for (int i = 0; i < root.children.size(); i++) {
+                    order(root.children.get(i),list);
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void traversal(Node root,List<Integer> list){
         if(root!=null){
@@ -72,4 +100,5 @@ class Solution {
 //        children = _children;
 //    }
 //};
+
 //leetcode submit region end(Prohibit modification and deletion)
