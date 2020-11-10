@@ -13,13 +13,28 @@
 //  [3,2,1]
 //] 
 // Related Topics 回溯算法 
-// 👍 985 👎 0
 
+
+import java.util.ArrayList;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public List<List<Integer>> permute(int[] nums) {
+    List<List<Integer>> list = new ArrayList<>();
 
+    public List<List<Integer>> permute(int[] nums) {
+        calu(0,nums,new ArrayList<Integer>());
+        return list;
+    }
+    private void calu(int index,int[] nums,ArrayList<Integer> temp){
+        if(index==nums.length){
+            list.add(new ArrayList(temp));
+            return;
+        }
+        for (int i = 0; i <= index; i++) {
+            temp.add(i,nums[index]);
+            calu(index+1,nums,temp);
+            temp.remove(i);
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
