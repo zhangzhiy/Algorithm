@@ -43,6 +43,7 @@ class Solution {
 //        }
 //        return -1;
         //03
+
         int index = -1;
         for ( char i = 'a';i <= 'z';i++){
             int startIndex = s.indexOf(i);

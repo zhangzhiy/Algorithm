@@ -22,19 +22,21 @@ class Solution {
     List<List<Integer>> list = new ArrayList<>();
 
     public List<List<Integer>> permute(int[] nums) {
-        calu(0,nums,new ArrayList<Integer>());
+        calu(0, nums, new ArrayList<Integer>());
         return list;
     }
-    private void calu(int index,int[] nums,ArrayList<Integer> temp){
-        if(index==nums.length){
+
+    private void calu(int index, int[] nums, ArrayList<Integer> temp) {
+        if (index == nums.length) {
             list.add(new ArrayList(temp));
             return;
         }
         for (int i = 0; i <= index; i++) {
-            temp.add(i,nums[index]);
-            calu(index+1,nums,temp);
+            temp.add(i, nums[index]);
+            calu(index + 1, nums, temp);
             temp.remove(i);
         }
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
