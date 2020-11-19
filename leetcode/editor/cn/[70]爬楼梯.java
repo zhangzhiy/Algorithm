@@ -31,15 +31,58 @@ class Solution {
         if(n<=2){
             return n;
         }
-        int result=0;
         int i=1;
         int j=2;
-        for (int k = 3; k <= n; k++) {
-            result=i+j;
+        int num=0;
+        int index=2;
+        while (index<n){
+            num=i+j;
             i=j;
-            j=result;
+            j=num;
+            index++;
         }
-        return result;
+        return num;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        if(n<=2){
+//            return n;
+//        }
+//        int result=0;
+//        int i=1;
+//        int j=2;
+//        for (int k = 3; k <= n; k++) {
+//            result=i+j;
+//            i=j;
+//            j=result;
+//        }
+//        return result;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
